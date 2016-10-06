@@ -15,7 +15,7 @@ class LiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "直播"
+//        title = "直播"
         view.backgroundColor = UIColor.purple
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

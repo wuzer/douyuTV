@@ -15,7 +15,7 @@ class FollowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "关注"
+//        title = "关注"
         navigationItem.title = "test"
         view.backgroundColor = UIColor.red
         // Uncomment the following line to preserve selection between presentations

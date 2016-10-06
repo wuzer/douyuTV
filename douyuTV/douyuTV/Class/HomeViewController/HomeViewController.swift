@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "首页"
+//        title = "首页"
         view.backgroundColor = UIColor.white
         
         setupUI()

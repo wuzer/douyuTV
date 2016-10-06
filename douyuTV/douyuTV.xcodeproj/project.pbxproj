@@ -17,6 +17,7 @@
 		848CAC6C1DA2824B00A84C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CAC6B1DA2824B00A84C91 /* Assets.xcassets */; };
 		848CAC6F1DA2824B00A84C91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CAC6D1DA2824B00A84C91 /* LaunchScreen.storyboard */; };
 		84ACD9BF1DA4BD590078B65F /* UIbarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD9BE1DA4BD590078B65F /* UIbarButtonItem+Extension.swift */; };
+		84ACD9EC1DA5FC740078B65F /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD9EB1DA5FC740078B65F /* PageTitleView.swift */; };
 		E64F0C6CD985C1459C68D9F0 /* Pods_douyuTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9967105B5A2F399943487261 /* Pods_douyuTV.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		848CAC6E1DA2824B00A84C91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848CAC701DA2824B00A84C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		84ACD9BE1DA4BD590078B65F /* UIbarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIbarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		84ACD9EB1DA5FC740078B65F /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		98FBCD18FFA51B03B8BA3766 /* Pods-douyuTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyuTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-douyuTV/Pods-douyuTV.release.xcconfig"; sourceTree = "<group>"; };
 		9967105B5A2F399943487261 /* Pods_douyuTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_douyuTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		844004EA1DA3690B00240EA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84ACD9EA1DA5FC3F0078B65F /* PageTitleView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,14 @@
 				848CAC701DA2824B00A84C91 /* Info.plist */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		84ACD9EA1DA5FC3F0078B65F /* PageTitleView */ = {
+			isa = PBXGroup;
+			children = (
+				84ACD9EB1DA5FC740078B65F /* PageTitleView.swift */,
+			);
+			path = PageTitleView;
 			sourceTree = "<group>";
 		};
 		E25E31C02D01146D92327AC7 /* Frameworks */ = {
@@ -328,6 +339,7 @@
 				848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */,
 				848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */,
 				844004EF1DA369DE00240EA2 /* HomeViewController.swift in Sources */,
+				84ACD9EC1DA5FC740078B65F /* PageTitleView.swift in Sources */,
 				844004F11DA369EC00240EA2 /* LiveViewController.swift in Sources */,
 				844004F51DA36A1600240EA2 /* FollowViewController.swift in Sources */,
 			);

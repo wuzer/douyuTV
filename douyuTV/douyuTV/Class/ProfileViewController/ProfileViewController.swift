@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "我的"
+//        title = "我的"
         view.backgroundColor = UIColor.yellow
         // Do any additional setup after loading the view.
     }

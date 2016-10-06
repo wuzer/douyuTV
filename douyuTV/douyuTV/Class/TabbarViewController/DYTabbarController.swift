@@ -12,25 +12,23 @@ class DYTabbarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
 //        let imageItems = ["btn_home_normal", "btn_column_normal", "btn_live_normal", "btn_user_normal"]
 //        let titleItems = ["首页", "直播", "关注", "我的"]
-
         
-        addChildViewController(childController: HomeViewController(), imageName: "btn_home_normal", tiltle: "首页")
-        addChildViewController(childController: LiveViewController(), imageName: "btn_column_normal", tiltle: "直播")
-        addChildViewController(childController: FollowViewController(), imageName: "btn_live_normal", tiltle: "关注")
-        addChildViewController(childController: ProfileViewController(), imageName: "btn_user_normal", tiltle: "我的")
+        addChildViewController(childController: HomeViewController(), imageName: "btn_home_normal", title: "首页")
+        addChildViewController(childController: LiveViewController(), imageName: "btn_column_normal", title: "直播")
+        addChildViewController(childController: FollowViewController(), imageName: "btn_live_normal", title: "关注")
+        addChildViewController(childController: ProfileViewController(), imageName: "btn_user_normal", title: "我的")
         
     }
 
-    private func addChildViewController(childController: UIViewController, imageName: String, tiltle: String) {
+    private func addChildViewController(childController: UIViewController, imageName: String, title: String) {
         
         // 设置标题
         childController.title = title
-        childController.tabBarItem.title = title
         childController.tabBarItem.selectedImage = UIImage.init(named: imageName + "_highlighted")
         childController.tabBarItem.image = UIImage.init(named: imageName)
         
