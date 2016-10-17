@@ -14,20 +14,20 @@ private let reuseID = "livecell"
 class PageContentView: UIView {
 
     fileprivate var childViewContollers : [UIViewController]
-    fileprivate var parentViewController : UIViewController
+    fileprivate weak var parentViewController : UIViewController?
     
     // MARK: lazyload
-    fileprivate lazy var collectionView : UICollectionView = {
+    fileprivate lazy var collectionView : UICollectionView = { [weak self] in
     
         // 创建layout
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = self.bounds.size
+        flowLayout.itemSize = (self?.bounds.size)!
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.scrollDirection = .horizontal
         
         // 创建collectionview
-        let collectionView : UICollectionView = UICollectionView(frame: self.bounds, collectionViewLayout: flowLayout)
+        let collectionView : UICollectionView = UICollectionView(frame: self!.bounds, collectionViewLayout: flowLayout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
@@ -60,7 +60,7 @@ extension PageContentView {
         
         // 添加所有子控制器
         for childViewController in childViewContollers {
-            parentViewController.addChildViewController(childViewController)
+            parentViewController?.addChildViewController(childViewController)
         }
     
         // 添加collectionview
@@ -96,6 +96,13 @@ extension PageContentView : UICollectionViewDataSource {
     
 }
 
+extension PageContentView {
 
+    func setcurrentIndex(currentIndex : Int) {
+        let indexPath  = IndexPath(item: currentIndex, section: 0)
+        print(indexPath)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
+    }
+}
 
 

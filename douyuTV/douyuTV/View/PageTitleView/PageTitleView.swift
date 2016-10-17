@@ -10,11 +10,17 @@ import UIKit
 
 private let KScrollViewLineHeight: CGFloat = 2
 
+protocol PageTitleViewDelegate : NSObjectProtocol {
+    func pageTitleView(titleView: PageTitleView, selectedIndex index : Int)
+}
+
 class PageTitleView: UIView {
 
     // title 数组
+    fileprivate var currentIndex : Int = 0
     fileprivate var titles: [String]
     fileprivate lazy var titleLabels: [UILabel] = [UILabel]()
+    weak var delegate : PageTitleViewDelegate?
     
     // scrollView
     fileprivate lazy var scrollView: UIScrollView = {
@@ -84,6 +90,11 @@ extension PageTitleView {
             // 添加label到scrollview
             scrollView.addSubview(label)
             titleLabels.append(label)
+            
+            // label add gesture
+            label.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.titleLabelAction(tap:)))
+            label.addGestureRecognizer(tap)
         }
     }
     
@@ -106,5 +117,33 @@ extension PageTitleView {
     }
 }
 
+extension PageTitleView {
+    
+    @objc fileprivate func titleLabelAction(tap : UITapGestureRecognizer) {
+        
+        // get current label
+        guard let currentLabel = tap.view as? UILabel else {  return }
+        
+        // get early label
+        let earlyLabel = titleLabels[currentIndex]
+        
+        // change label color
+        currentLabel.textColor = UIColor.orange
+        earlyLabel.textColor = UIColor.darkGray
+        
+        // save new label tag
+        currentIndex = currentLabel.tag
+        
+        // change scrollline position
+        let scrollLinePosition = CGFloat(currentLabel.tag) * scrollBar.frame.width
+        UIView.animate(withDuration: 0.1) {
+            self.scrollBar.frame.origin.x = scrollLinePosition
+        }
+        
+        // call notification do something
+        delegate?.pageTitleView(titleView: self, selectedIndex: currentIndex)
+        
+    }
 
+}
 

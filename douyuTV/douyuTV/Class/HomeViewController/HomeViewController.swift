@@ -14,11 +14,11 @@ private let reuseIdentifier = "Cell"
 class HomeViewController: UIViewController {
 
     // mark - lazyLoad
-    fileprivate lazy var pageTitleView: PageTitleView = {
+    fileprivate lazy var pageTitleView: PageTitleView = { [weak self] in
         let frame: CGRect = CGRect(x: 0, y: KNavigationBarHeight + KStatusBarHeight, width: KScreenWidth, height: KTitleHeight)
         let titles: [String] = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: frame, titles: titles)
-//        titleView.backgroundColor = UIColor.red
+        titleView.delegate = self
         return titleView
     }()
     
@@ -83,3 +83,12 @@ class HomeViewController: UIViewController {
     
     
 }
+
+extension HomeViewController : PageTitleViewDelegate {
+    
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setcurrentIndex(currentIndex: index)
+    }
+
+}
+
