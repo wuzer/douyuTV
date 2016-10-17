@@ -1,12 +1,18 @@
 PODS:
   - Alamofire (4.0.1)
+  - UIColor-ChineseTraditionalColors (0.0.1)
+  - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - UIColor-ChineseTraditionalColors
+  - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  UIColor-ChineseTraditionalColors: 1ad31ba4ae32a5f756873b5b139e50ba82ec17f2
+  UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 5df779a657cb6d2aa3e020ac4834f0e6bfc32872
+PODFILE CHECKSUM: 2f7800d28cca3c598d6eff4339f3316a5997169f
 
 COCOAPODS: 1.1.0.beta.2

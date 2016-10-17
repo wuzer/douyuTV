@@ -12,6 +12,8 @@
 		844004F11DA369EC00240EA2 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F01DA369EC00240EA2 /* LiveViewController.swift */; };
 		844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F21DA369FD00240EA2 /* ProfileViewController.swift */; };
 		844004F51DA36A1600240EA2 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F41DA36A1600240EA2 /* FollowViewController.swift */; };
+		844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F43411DB488B700B60177 /* UIColor+Extension.swift */; };
+		8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C4AF1DA6377F00895200 /* PageContentView.swift */; };
 		848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CAC641DA2824B00A84C91 /* AppDelegate.swift */; };
 		848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CAC661DA2824B00A84C91 /* ViewController.swift */; };
 		848CAC6C1DA2824B00A84C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CAC6B1DA2824B00A84C91 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		844004F01DA369EC00240EA2 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		844004F21DA369FD00240EA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		844004F41DA36A1600240EA2 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		844F43411DB488B700B60177 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8468C4AF1DA6377F00895200 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		848CAC611DA2824B00A84C91 /* douyuTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CAC641DA2824B00A84C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848CAC661DA2824B00A84C91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,8 +70,8 @@
 		844004E01DA365FE00240EA2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				844004E61DA368C000240EA2 /* FollowViewContoller */,
 				844004E71DA368C000240EA2 /* HomeViewController */,
+				844004E61DA368C000240EA2 /* FollowViewContoller */,
 				844004E81DA368C000240EA2 /* LiveViewContoller */,
 				844004E91DA368C000240EA2 /* ProfileViewController */,
 				844004E11DA3664900240EA2 /* TabbarViewController */,
@@ -183,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				84ACD9BE1DA4BD590078B65F /* UIbarButtonItem+Extension.swift */,
+				844F43411DB488B700B60177 /* UIColor+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				84ACD9EB1DA5FC740078B65F /* PageTitleView.swift */,
+				8468C4AF1DA6377F00895200 /* PageContentView.swift */,
 			);
 			path = PageTitleView;
 			sourceTree = "<group>";
@@ -338,6 +344,8 @@
 			files = (
 				84ACD9BF1DA4BD590078B65F /* UIbarButtonItem+Extension.swift in Sources */,
 				844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */,
+				8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */,
+				844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */,
 				844004E51DA3676400240EA2 /* DYTabbarController.swift in Sources */,
 				848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */,
 				848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */,

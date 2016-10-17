@@ -13,11 +13,11 @@ private let KScrollViewLineHeight: CGFloat = 2
 class PageTitleView: UIView {
 
     // title 数组
-    var titles: [String]
-    lazy var titleLabels: [UILabel] = [UILabel]()
+    fileprivate var titles: [String]
+    fileprivate lazy var titleLabels: [UILabel] = [UILabel]()
     
     // scrollView
-    lazy var scrollView: UIScrollView = {
+    fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.scrollsToTop = false
@@ -26,7 +26,7 @@ class PageTitleView: UIView {
         return scrollView
     }()
     
-    lazy var scrollBar: UIView = {
+    fileprivate lazy var scrollBar: UIView = {
         let scrollBar = UIView()
         scrollBar.backgroundColor = UIColor.orange
         
@@ -51,7 +51,7 @@ class PageTitleView: UIView {
 
 extension PageTitleView {
     
-    func setupSubviews() {
+    fileprivate func setupSubviews() {
         addSubview(scrollView)
         scrollView.frame = bounds
         
@@ -59,7 +59,7 @@ extension PageTitleView {
         layoutBottomBar()
     }
     
-    private func layoutTitleViews() {
+    fileprivate func layoutTitleViews() {
     
         let labelY: CGFloat = 0
         let labelH: CGFloat = frame.height - KScrollViewLineHeight
@@ -87,7 +87,7 @@ extension PageTitleView {
         }
     }
     
-    private func layoutBottomBar() {
+    fileprivate func layoutBottomBar() {
         
         // 添加底线
         let bottomLine = UIView()

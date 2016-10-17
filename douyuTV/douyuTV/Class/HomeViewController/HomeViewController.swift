@@ -14,7 +14,7 @@ private let reuseIdentifier = "Cell"
 class HomeViewController: UIViewController {
 
     // mark - lazyLoad
-    private lazy var pageTitleView: PageTitleView = {
+    fileprivate lazy var pageTitleView: PageTitleView = {
         let frame: CGRect = CGRect(x: 0, y: KNavigationBarHeight + KStatusBarHeight, width: KScreenWidth, height: KTitleHeight)
         let titles: [String] = ["推荐", "游戏", "娱乐", "趣玩"]
         let titleView = PageTitleView(frame: frame, titles: titles)
@@ -22,7 +22,26 @@ class HomeViewController: UIViewController {
         return titleView
     }()
     
-
+    fileprivate lazy var pageContentView : PageContentView = {
+    
+        // 确定frame
+        let height = KScreenHeigth - kNavigationAndStatusBarHeight - KTitleHeight
+        let contentFrame = CGRect(x: 0, y: kNavigationAndStatusBarHeight + KTitleHeight, width: KScreenWidth, height: height)
+        
+        // 确定子控制器
+        var childViewControllers = [UIViewController]()
+        for _ in 0..<4 {
+            let viewController = UIViewController()
+            viewController.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
+            childViewControllers.append(viewController)
+        }
+        
+        
+        let contentView = PageContentView(frame: contentFrame, childViewContollers: childViewControllers, parentViewController: self)
+        return contentView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = ""
@@ -40,10 +59,15 @@ class HomeViewController: UIViewController {
         
         // 添加titleView
         view.addSubview(pageTitleView)
+        
+        // 添加Contentview
+        view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.red
+        
     }
     
     
-    func setupNavigation() {
+    fileprivate func setupNavigation() {
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "logo")
         let size = CGSize(width: 40, height: 40)

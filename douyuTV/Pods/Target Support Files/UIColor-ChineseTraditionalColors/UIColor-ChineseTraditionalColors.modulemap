@@ -1,0 +1,6 @@
+framework module UIColor_ChineseTraditionalColors {
+  umbrella header "UIColor-ChineseTraditionalColors-umbrella.h"
+
+  export *
+  module * { export * }
+}
