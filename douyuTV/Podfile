@@ -9,5 +9,6 @@ target 'douyuTV' do
   pod 'Alamofire', '~> 4.0'
   pod 'UIColor-ChineseTraditionalColors'
   pod 'UIColor_Hex_Swift'
+  pod 'SnapKit', '~> 3.0.2'
 end
 

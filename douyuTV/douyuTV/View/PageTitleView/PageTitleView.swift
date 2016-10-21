@@ -124,6 +124,8 @@ extension PageTitleView {
         // get current label
         guard let currentLabel = tap.view as? UILabel else {  return }
         
+        if currentLabel.tag == currentIndex { return }
+        
         // get early label
         let earlyLabel = titleLabels[currentIndex]
         
