@@ -13,6 +13,7 @@
 		844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F21DA369FD00240EA2 /* ProfileViewController.swift */; };
 		844004F51DA36A1600240EA2 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F41DA36A1600240EA2 /* FollowViewController.swift */; };
 		844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F43411DB488B700B60177 /* UIColor+Extension.swift */; };
+		846122F51DB9EC97006D30B7 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F41DB9EC97006D30B7 /* RecommendViewController.swift */; };
 		8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C4AF1DA6377F00895200 /* PageContentView.swift */; };
 		848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CAC641DA2824B00A84C91 /* AppDelegate.swift */; };
 		848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CAC661DA2824B00A84C91 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		844004F21DA369FD00240EA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		844004F41DA36A1600240EA2 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		844F43411DB488B700B60177 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		846122F41DB9EC97006D30B7 /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		8468C4AF1DA6377F00895200 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		848CAC611DA2824B00A84C91 /* douyuTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CAC641DA2824B00A84C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				844004EE1DA369DE00240EA2 /* HomeViewController.swift */,
+				846122F41DB9EC97006D30B7 /* RecommendViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */,
 				8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */,
 				844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */,
+				846122F51DB9EC97006D30B7 /* RecommendViewController.swift in Sources */,
 				844004E51DA3676400240EA2 /* DYTabbarController.swift in Sources */,
 				848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */,
 				848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */,

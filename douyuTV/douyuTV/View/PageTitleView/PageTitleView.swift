@@ -9,6 +9,8 @@
 import UIKit
 
 private let KScrollViewLineHeight: CGFloat = 2
+private let KNormalColor : (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
+private let KSelectColor : (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
 
 protocol PageTitleViewDelegate : NSObjectProtocol {
     func pageTitleView(titleView: PageTitleView, selectedIndex index : Int)
@@ -117,6 +119,7 @@ extension PageTitleView {
     }
 }
 
+// MARK: label click function
 extension PageTitleView {
     
     @objc fileprivate func titleLabelAction(tap : UITapGestureRecognizer) {
@@ -147,5 +150,33 @@ extension PageTitleView {
         
     }
 
+}
+
+// MARK:
+extension PageTitleView {
+
+    func setTitleWithProgress(progress : CGFloat, sourceIndex : Int, targetIndex : Int) {
+        
+        // get label
+        let sourceLabel = titleLabels[sourceIndex]
+        let targetLabel = titleLabels[targetIndex]
+//        print(sourceLabel,targetLabel)
+        
+        // label scroll
+        let moveTotalX = targetLabel.frame.origin.x - sourceLabel.frame.origin.x
+        let moveX = moveTotalX * progress
+        scrollBar.frame.origin.x = sourceLabel.frame.origin.x + moveX
+        
+        // color change
+        let colorDelta = (KSelectColor.0 - KNormalColor.0, KSelectColor.1 - KNormalColor.1, KSelectColor.2 - KNormalColor.2)
+        
+        sourceLabel.textColor = UIColor(r: KSelectColor.0 - colorDelta.0 * progress, g: KSelectColor.1 - colorDelta.1 * progress, b: KSelectColor.2 - colorDelta.2 * progress)
+        
+        targetLabel.textColor = UIColor(r: KNormalColor.0 + colorDelta.0 * progress, g: KNormalColor.1 + colorDelta.1 * progress, b: KNormalColor.2 + colorDelta.2 * progress)
+        
+        // remeber new index
+        currentIndex = targetIndex
+    }
+    
 }
 

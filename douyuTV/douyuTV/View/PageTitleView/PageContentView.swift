@@ -10,11 +10,18 @@ import UIKit
 
 private let reuseID = "livecell"
 
+// MARK: protocol
+protocol PageContentViewDelegate : NSObjectProtocol {
+    func pageContentView(contentView : PageContentView, progress : CGFloat, targetIndex : Int, sourceIndex : Int)
+}
 
 class PageContentView: UIView {
 
     fileprivate var childViewContollers : [UIViewController]
     fileprivate weak var parentViewController : UIViewController?
+    fileprivate var startOffSetX : CGFloat = 0
+    fileprivate var isForbidScrollDelegate : Bool = false
+    weak var delegate : PageContentViewDelegate?
     
     // MARK: lazyload
     fileprivate lazy var collectionView : UICollectionView = { [weak self] in
@@ -32,6 +39,7 @@ class PageContentView: UIView {
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseID)
         
         return collectionView
@@ -70,7 +78,7 @@ extension PageContentView {
 }
 
 
-// MARK: 遵守协议
+// MARK: UICollectionViewDataSource
 extension PageContentView : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,11 +104,69 @@ extension PageContentView : UICollectionViewDataSource {
     
 }
 
+// MARK: UICollectionViewDelegate
+
+extension PageContentView : UICollectionViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        isForbidScrollDelegate = false
+        
+        startOffSetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // judge whether click
+        if isForbidScrollDelegate { return }
+        
+        // define value
+        var progress    : CGFloat = 0
+        var sourceIndex : Int     = 0
+        var targetIndex : Int     = 0
+        
+        // judge left or right
+        let currentOffSetX = scrollView.contentOffset.x
+        let scrollViewWidth = scrollView.bounds.width
+        
+        if currentOffSetX > startOffSetX { // left
+//            print("left")
+            progress = currentOffSetX / scrollViewWidth - floor(currentOffSetX / scrollViewWidth)
+            sourceIndex = Int(currentOffSetX / scrollViewWidth)
+            targetIndex = sourceIndex + 1
+            if targetIndex >= childViewContollers.count {
+                targetIndex = childViewContollers.count - 1
+            }
+            
+            if currentOffSetX - startOffSetX == scrollViewWidth {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+            
+        } else { // right
+//            print("right")
+            progress = 1 - (currentOffSetX / scrollViewWidth - floor(currentOffSetX / scrollViewWidth))
+            targetIndex = Int(currentOffSetX / scrollViewWidth)
+            sourceIndex = targetIndex + 1
+            if sourceIndex >= childViewContollers.count {
+                sourceIndex = childViewContollers.count - 1
+            }
+        }
+        
+//        print("progress:\(progress),targetIndex:\(targetIndex), sourceIndex:\(sourceIndex)")
+        delegate?.pageContentView(contentView: self, progress: progress, targetIndex: targetIndex, sourceIndex: sourceIndex)
+    }
+    
+}
+
+
 extension PageContentView {
 
     func setcurrentIndex(currentIndex : Int) {
+        
+        isForbidScrollDelegate = true
+        
         let indexPath  = IndexPath(item: currentIndex, section: 0)
-        print(indexPath)
         collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
     }
 }
