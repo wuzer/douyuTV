@@ -7,8 +7,9 @@ target 'douyuTV' do
 
   # Pods for douyuTV
   pod 'Alamofire', '~> 4.0'
-  pod 'UIColor-ChineseTraditionalColors'
   pod 'UIColor_Hex_Swift'
   pod 'SnapKit', '~> 3.0.2'
+  pod 'HandyJSON', '~> 1.1.0'
+  pod 'Kingfisher', '~> 3.0'
 end
 

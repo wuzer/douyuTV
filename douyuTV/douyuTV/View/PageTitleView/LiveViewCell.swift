@@ -29,17 +29,19 @@ class LiveViewCell: UICollectionViewCell {
     
         let titleLabel = UILabel()
         titleLabel.text = "jefferson"
+        titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont.systemFont(ofSize: 12)
         return titleLabel
         
     }()
     
-    fileprivate lazy var onlineLabel : UILabel = {
+    fileprivate lazy var onlineButton : UIButton = {
         
-        let titleLabel = UILabel()
-        titleLabel.text = "10000人在线"
-        titleLabel.font = UIFont.systemFont(ofSize: 12)
-        return titleLabel
+        let onlineButton = UIButton()
+        onlineButton.setTitle("10000人在线", for: .normal)
+        onlineButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        onlineButton.titleLabel?.textColor = UIColor.white
+        return onlineButton
         
     }()
 
@@ -47,11 +49,39 @@ class LiveViewCell: UICollectionViewCell {
         
         let liveImage = UIImageView()
         liveImage.image = UIImage.init(named: "Img_default")
-        
+        liveImage.layer.cornerRadius = 5
+        liveImage.layer.masksToBounds = true
+
         return liveImage
         
     }()
 
+    // model
+    var anchor: AnchorModel? {
+        didSet {
+            
+            guard anchor != nil else { return }
+            var onlineString: String = ""
+            if (anchor?.online)! >= 10000 {
+                onlineString = "\(Int((anchor?.online)! / 10000))在线"
+            } else {
+                onlineString = "\((anchor?.online)!)在线"
+            }
+            onlineButton.setTitle(onlineString, for: .normal)
+            
+            // nickname
+            userLabel.text = anchor?.nickname
+            
+            // icon
+            guard let iconUrl = URL.init(string: (anchor?.vertical_src)!) else { return }
+            liveImage.kf.setImage(with: iconUrl)
+
+            titleView.text = anchor?.room_name
+            
+        }
+    }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -72,7 +102,7 @@ extension LiveViewCell {
         addSubview(iconView)
         addSubview(titleView)
         liveImage.addSubview(userLabel)
-        liveImage.addSubview(onlineLabel)
+        liveImage.addSubview(onlineButton)
         
         iconView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
@@ -100,7 +130,7 @@ extension LiveViewCell {
             make.width.lessThanOrEqualTo(100)
         }
         
-        onlineLabel.snp.makeConstraints { (make) in
+        onlineButton.snp.makeConstraints { (make) in
             
             make.right.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview().offset(-3)

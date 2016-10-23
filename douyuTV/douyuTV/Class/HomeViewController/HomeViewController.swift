@@ -48,7 +48,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = ""
         view.backgroundColor = UIColor.white
-        
+  
         setupUI()
     }
 

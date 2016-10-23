@@ -39,16 +39,20 @@ class RecommendViewController: UIViewController {
         return collectionView
     }()
     
+    fileprivate lazy var recommendViewModel : RecommendViewModel = RecommendViewModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.red
         setupUI()
+        loadData()
     }
 
 }
 
+// layout UI
 extension RecommendViewController {
     
     func setupUI() {
@@ -59,40 +63,57 @@ extension RecommendViewController {
     }
 }
 
+extension RecommendViewController {
+
+    func loadData() {
+     
+        recommendViewModel.requestData { 
+            
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+
 // MARK: UICollectionViewDataSource
 extension RecommendViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendViewModel.AnchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return 8
-        }
-        return 4
+        let group = recommendViewModel.AnchorGroups[section]
+        return group.room_list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: UICollectionViewCell!
+        // get model
+        let group = recommendViewModel.AnchorGroups[indexPath.section]
+        let anchor = group.room_list[indexPath.item]
         
+        // creat cell
         if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: KPrettyCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KPrettyCell, for: indexPath) as! PrettyCollectionCell
+            cell.anchor = anchor
+            return cell
         } else {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCell, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KNormalCell, for: indexPath) as! LiveViewCell
+             cell.anchor = anchor
+            return cell
         }
         
-        cell.backgroundColor = UIColor.white
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KHeaderView, for: indexPath)
-        
+        let headerView: CollectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KHeaderView, for: indexPath) as! CollectionHeaderView
         headerView.backgroundColor = UIColor.white
+        let anchor = recommendViewModel.AnchorGroups[indexPath.section]
+        headerView.anchor = anchor
+        
         return headerView
     }
     

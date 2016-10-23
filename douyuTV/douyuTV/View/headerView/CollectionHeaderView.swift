@@ -38,6 +38,12 @@ class CollectionHeaderView: UICollectionReusableView {
         return button
     }()
     
+    var anchor: AnchorGroup? {
+        didSet {
+            titleView.text = anchor?.tag_name
+            iconView.image = UIImage.init(named: (anchor?.icon_name)!)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,9 +78,10 @@ extension CollectionHeaderView {
         }
         
         titleView.snp.makeConstraints { (make) in
-            make.top.equalTo(separateView.snp.bottom).offset(10)
-            make.left.equalTo(iconView.snp.right).offset(10)
-            make.size.equalTo(CGSize(width: 40, height: 20))
+//            make.top.equalTo(separateView.snp.bottom).offset(10)
+            make.centerY.equalTo(iconView.snp.centerY)
+            make.left.equalTo(iconView.snp.right).offset(5)
+            make.size.equalTo(CGSize(width: 100, height: 20))
         }
         
         moreButton.snp.makeConstraints { (make) in

@@ -8,10 +8,11 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class PrettyCollectionCell: UICollectionViewCell {
     
-    fileprivate lazy var loctionButton: UIButton = {
+    fileprivate lazy var locationButton: UIButton = {
     
         let button = UIButton()
         button.setImage(UIImage.init(named: "ico_location"), for: .normal)
@@ -33,6 +34,12 @@ class PrettyCollectionCell: UICollectionViewCell {
     fileprivate lazy var prettyView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage.init(named: "live_cell_default_phone")
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
+//        let imageSize = imageView.frame.size
+//        UIImage.init().dy_cornerImage(size: CGSize(width: imageSize.width - 5, height: imageSize.height - 5), fillcolor: UIColor.white, completion: { (image) in
+//            imageView.image = image
+//        })
         return imageView
     }()
     
@@ -45,6 +52,31 @@ class PrettyCollectionCell: UICollectionViewCell {
         return button
     }()
     
+    var anchor: AnchorModel? {
+        didSet {
+            guard anchor != nil else { return }
+            
+            // online
+            var onlineString: String = ""
+            if (anchor?.online)! >= 10000 {
+                onlineString = "\(Int((anchor?.online)! / 10000))在线"
+            } else {
+                onlineString = "\((anchor?.online)!)在线"
+            }
+            onlineButton.setTitle(onlineString, for: .normal)
+            
+            // nickname
+            nameLabel.text = anchor?.nickname
+            
+            // loction
+            locationButton.setTitle(anchor?.anchor_city, for: .normal)
+            
+            // icon
+            guard let iconUrl = URL.init(string: (anchor?.vertical_src)!) else { return }
+            prettyView.kf.setImage(with: iconUrl)
+        }
+    }
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -63,12 +95,12 @@ extension PrettyCollectionCell {
     
     func setupSubviews() {
     
-        addSubview(loctionButton)
+        addSubview(locationButton)
         addSubview(nameLabel)
         addSubview(prettyView)
         prettyView.addSubview(onlineButton)
         
-        loctionButton.snp.makeConstraints { (make) in
+        locationButton.snp.makeConstraints { (make) in
             make.bottom.equalToSuperview().offset(-5)
             make.left.equalToSuperview()
             make.height.equalTo(14)
@@ -77,7 +109,7 @@ extension PrettyCollectionCell {
         
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
-            make.bottom.equalTo(loctionButton.snp.top).offset(-5)
+            make.bottom.equalTo(locationButton.snp.top).offset(-5)
             make.height.equalTo(14)
             make.width.lessThanOrEqualTo(100)
         }

@@ -12,7 +12,7 @@ typealias completionHandler = (UIImage) -> Void
 
 extension UIImage {
     
-     func dy_cornerImageWithsize(_ size: CGSize, fillcolor: UIColor, completion: @escaping completionHandler) -> Void {
+     func dy_cornerImage(size: CGSize, fillcolor: UIColor, completion: @escaping completionHandler) {
         
         DispatchQueue.global().async {
             
@@ -35,7 +35,6 @@ extension UIImage {
             
             DispatchQueue.main.async {
                 completion(result!)
-
             }
         }
     }

@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (4.0.1)
+  - HandyJSON (1.1.0)
+  - Kingfisher (3.1.4)
   - SnapKit (3.0.2)
-  - UIColor-ChineseTraditionalColors (0.0.1)
   - UIColor_Hex_Swift (3.0.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - HandyJSON (~> 1.1.0)
+  - Kingfisher (~> 3.0)
   - SnapKit (~> 3.0.2)
-  - UIColor-ChineseTraditionalColors
   - UIColor_Hex_Swift
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  HandyJSON: c19dba750f1a8c238c4f47f40b1b5e3efaef7e34
+  Kingfisher: 6c67e3e57f2d81a9cfdfa25052cd86f33ceac9bb
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
-  UIColor-ChineseTraditionalColors: 1ad31ba4ae32a5f756873b5b139e50ba82ec17f2
   UIColor_Hex_Swift: 95f718452092a3efc8a827dffd2c04d3237be02d
 
-PODFILE CHECKSUM: 6249881227cd4a9923ec8787ad23bb4ca21008f5
+PODFILE CHECKSUM: ac0d3bfeb82fd854bfe95dbdd83d63be9e8ce3e1
 
 COCOAPODS: 1.1.0.beta.2
