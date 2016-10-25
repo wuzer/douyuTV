@@ -8,8 +8,9 @@
 
 import Foundation
 
-let KBaseUrl  = "http://capi.douyucdn.cn/api/v1/"
-let KHotcate  = "getHotCate"
-let KVertical = "getVerticalRoom"
-let KBigData  = "getbigDataRoom"
-let KSlide_6  = "slide/6"
+let APIBaseUrl      = "http://capi.douyucdn.cn/api/v1/"
+let APIHotcate      = "getHotCate"
+let APIVertical     = "getVerticalRoom"
+let APIBigData      = "getbigDataRoom"
+let APISlide_6      = "slide/6"
+let APIColumnDetail = "getcolumndetail"

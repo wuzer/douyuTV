@@ -9,7 +9,7 @@
 import UIKit
 
 private let KTitleHeight: CGFloat = 40
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier       = "Cell"
 
 class HomeViewController: UIViewController {
 
@@ -31,7 +31,8 @@ class HomeViewController: UIViewController {
         // 确定子控制器
         var childViewControllers = [UIViewController]()
         childViewControllers.append(RecommendViewController())
-        for _ in 0..<3 {
+        childViewControllers.append(GameViewController())
+        for _ in 0..<2 {
             let viewController = UIViewController()
             viewController.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childViewControllers.append(viewController)

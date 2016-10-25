@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let KScrollViewLineHeight: CGFloat = 2
+private let KScrollViewLineHeight: CGFloat             = 2
 private let KNormalColor : (CGFloat, CGFloat, CGFloat) = (85, 85, 85)
 private let KSelectColor : (CGFloat, CGFloat, CGFloat) = (255, 128, 0)
 

@@ -8,28 +8,89 @@
 
 import UIKit
 
+private let KItemMargin: CGFloat   = 10
+private let KItemWidth: CGFloat    = (KScreenWidth - 2 * KItemMargin) / 3
+private let KItemHeight: CGFloat   = KItemWidth * 6 / 5
+private let KHeaderHeight: CGFloat = 49
+private let KGameCellIdentify      = "KGameCellIdentify"
+private let KHeaderIdentify        = "KHeaderIdentify"
+
 class GameViewController: UIViewController {
 
+    // MARK: lazy load
+    fileprivate lazy var gameViewModel: GameViewModel = GameViewModel()
+    
+    fileprivate lazy var collectionView: UICollectionView = {[weak self] in
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSize(width: KItemWidth, height: KItemHeight)
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: KItemMargin, bottom: 0, right: KItemMargin)
+        flowLayout.headerReferenceSize = CGSize(width: KScreenWidth, height: KHeaderHeight)
+        
+        let collectionView: UICollectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: flowLayout)
+        collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.white
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.register(GameViewCell.self, forCellWithReuseIdentifier: KGameCellIdentify)
+        collectionView.register(CollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KHeaderIdentify)
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSubViews()
+        loadData()
 
-        // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+// MARK: set UI
+extension GameViewController {
+    
+    func setupSubViews() {
+    
+        view.addSubview(collectionView)
+    }
+    
+}
+
+// MARK: get data
+extension GameViewController {
+    
+    func loadData() {
+    
+        gameViewModel.loadGameData {
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+// MARK: set UI
+extension GameViewController : UICollectionViewDataSource{
+ 
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gameViewModel.gameModels.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KGameCellIdentify, for: indexPath) as! GameViewCell
+//        cell.backgroundColor = indexPath.item % 2 == 0 ? UIColor.orange : UIColor.red
+        let gameModel = gameViewModel.gameModels[indexPath.item]
+        cell.anchor = gameModel
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KHeaderIdentify, for: indexPath) as! CollectionHeaderView
+        headerView.titleView.text = "全部"
+        headerView.iconView.image = UIImage.init(named: "Img_orange")
+        headerView.moreButton.isHidden = true
+        return headerView
+    }
+    
+}
+

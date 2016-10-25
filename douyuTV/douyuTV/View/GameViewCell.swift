@@ -12,7 +12,7 @@ private let KCellHeightAndWidth: CGFloat = 44
 
 class GameViewCell: UICollectionViewCell {
     
-    var anchor: AnchorGroup? {
+    var anchor: BaseModel? {
         didSet {
             titleLabel.text = anchor?.tag_name
             
@@ -45,6 +45,7 @@ class GameViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+//        self.clipsToBounds = false
         setupSubviews()
     }
     
@@ -63,16 +64,26 @@ extension GameViewCell {
         addSubview(titleLabel)
         
         imageView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(15)
+            make.centerY.equalToSuperview().offset(-8)
             make.centerX.equalToSuperview()
             make.height.width.equalTo(KCellHeightAndWidth)
         }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.bottom.equalToSuperview().offset(-10)
             make.centerX.equalToSuperview()
             make.height.equalTo(15)
             make.width.lessThanOrEqualToSuperview()
+            make.top.equalTo(imageView.snp.bottom).offset(5)
         }
+        
+        // add separate
+        let separate = UIView()
+        separate.backgroundColor = UIColor.darkGray
+        addSubview(separate)
+        separate.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(kSingleLineHeight)
+            make.size.equalTo(CGSize(width: self.bounds.width, height: kSingleLineHeight))
+        }
+        
     }
 }

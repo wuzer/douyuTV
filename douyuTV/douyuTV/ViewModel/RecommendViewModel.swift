@@ -28,7 +28,7 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get bigData
-        HttpClient.requestData(type: .get, Path: KBigData, parameters: ["time": NSDate.getCurrentTime() as NSString]) { (response) in
+        HttpClient.requestData(type: .get, Path: APIBigData, parameters: ["time": NSDate.getCurrentTime() as NSString]) { (response) in
             
             // convert dict
             guard let responseDict = response as? [String: Any] else { return }
@@ -52,7 +52,7 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get vertical
-        HttpClient.requestData(type: .get, Path: KVertical, parameters: parameter as [String : Any]?) { (response) in
+        HttpClient.requestData(type: .get, Path: APIVertical, parameters: parameter as [String : Any]?) { (response) in
             
             // convert dict
             guard let responseDict = response as? [String: Any] else { return }
@@ -74,7 +74,7 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get hotcate
-        HttpClient.requestData(type: .get, Path: KHotcate, parameters: parameter as [String : Any]?) { (response) in
+        HttpClient.requestData(type: .get, Path: APIHotcate, parameters: parameter as [String : Any]?) { (response) in
 //            print(response)
             
             // convert dict
@@ -105,7 +105,7 @@ extension RecommendViewModel {
     
     func requestCycleData(compelition: @escaping () -> ()) {
     
-        HttpClient.requestData(type: .get, Path: KSlide_6, parameters: ["version": "2.300"]) { (response) in
+        HttpClient.requestData(type: .get, Path: APISlide_6, parameters: ["version": "2.300"]) { (response) in
          
             guard let response = response as? [String : Any] else { return }
             

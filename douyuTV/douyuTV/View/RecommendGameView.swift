@@ -9,7 +9,7 @@
 import UIKit
 
 private let KItemEdgeInset: CGFloat = 10
-private let KGameCellIdentify = "KGameCellIdentify"
+private let KGameCellIdentify       = "KGameCellIdentify"
 
 class RecommendGameView: UIView {
 

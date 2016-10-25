@@ -11,7 +11,7 @@ import SnapKit
 
 class CollectionHeaderView: UICollectionReusableView {
     
-    fileprivate lazy var iconView : UIImageView = {
+    lazy var iconView : UIImageView = {
     
         let iconView = UIImageView()
         iconView.image = UIImage.init(named: "home_header_hot")
@@ -19,7 +19,7 @@ class CollectionHeaderView: UICollectionReusableView {
         return iconView
     }()
     
-    fileprivate lazy var titleView : UILabel = {
+    lazy var titleView : UILabel = {
     
         let label = UILabel()
         label.textColor = UIColor.darkText
@@ -28,7 +28,7 @@ class CollectionHeaderView: UICollectionReusableView {
         return label
     }()
     
-    fileprivate lazy var moreButton : UIButton = {
+    lazy var moreButton : UIButton = {
     
         let button = UIButton()
         

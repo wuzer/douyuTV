@@ -9,15 +9,9 @@
 import UIKit
 import HandyJSON
 
-class AnchorGroup: HandyJSON {
+class AnchorGroup: BaseModel {
 
     var room_list: [AnchorModel] = [AnchorModel]()
-    var tag_name: String?
     var icon_name: String = "home_header_normal"
-    var icon_url: String?
-    
-    required init() {
-        
-    }
     
 }
