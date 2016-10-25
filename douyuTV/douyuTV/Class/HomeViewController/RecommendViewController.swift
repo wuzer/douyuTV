@@ -8,17 +8,25 @@
 
 import UIKit
 
-private let KItemMargin : CGFloat   = 10
-private let KItemWidth  : CGFloat   = (KScreenWidth - KItemMargin * 3) / 2
-private let KNormalItemH : CGFloat  = KItemWidth * 3 / 4
-private let KPrettyItemH : CGFloat  = KItemWidth * 4 / 3
-private let KHeaderHeight : CGFloat = 50
+private let KItemMargin: CGFloat    = 10
+private let KItemWidth: CGFloat     = (KScreenWidth - KItemMargin * 3) / 2
+private let KNormalItemH: CGFloat   = KItemWidth * 3 / 4
+private let KPrettyItemH: CGFloat   = KItemWidth * 4 / 3
+private let KHeaderHeight: CGFloat  = 50
+private let KCycleHeight: CGFloat   = KScreenWidth * 3 / 8
 private let KNormalCell             = "recommendCell"
 private let KPrettyCell             = "KPrettyCell"
 private let KHeaderView             = "KHeaderView"
 
 class RecommendViewController: UIViewController {
 
+    fileprivate lazy var cycleView: RecommendCycleView = {
+    
+        let cycleView = RecommendCycleView(frame: CGRect(x: 0, y: -KCycleHeight, width: KScreenWidth, height: KCycleHeight))
+        return cycleView
+    }()
+    
+    
     fileprivate lazy var collectionView : UICollectionView = { [unowned self] in
     
         let flowLayout = UICollectionViewFlowLayout()
@@ -30,6 +38,7 @@ class RecommendViewController: UIViewController {
         
         let collectionView : UICollectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.white
+        collectionView.contentInset = UIEdgeInsetsMake(KCycleHeight, 0, 0, 0)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(LiveViewCell.self, forCellWithReuseIdentifier: KNormalCell)
@@ -52,17 +61,19 @@ class RecommendViewController: UIViewController {
 
 }
 
-// layout UI
+// MARK: layout UI
 extension RecommendViewController {
     
     func setupUI() {
         
         // add collectionview
         view.addSubview(collectionView)
-        
+        collectionView.addSubview(cycleView)
+        cycleView.backgroundColor = UIColor.purple
     }
 }
 
+// MARK: get data
 extension RecommendViewController {
 
     func loadData() {
@@ -71,6 +82,11 @@ extension RecommendViewController {
             
             self.collectionView.reloadData()
         }
+        
+        recommendViewModel.requestCycleData {
+            self.cycleView.slideModels = self.recommendViewModel.SlideModels
+        }
+        
     }
 }
 

@@ -23,9 +23,12 @@
 		846122FA1DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F91DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift */; };
 		846122FC1DBA0F1D006D30B7 /* LiveViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */; };
 		846122FE1DBA1767006D30B7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122FD1DBA1767006D30B7 /* UIImage+Extension.swift */; };
+		846466651DBF43CA001CD1B9 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466641DBF43C9001CD1B9 /* SlideModel.swift */; };
+		846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466661DBF48C6001CD1B9 /* CycleViewCell.swift */; };
 		8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C4AF1DA6377F00895200 /* PageContentView.swift */; };
 		846E97461DBA46F30053BC15 /* PrettyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E97451DBA46F20053BC15 /* PrettyCollectionCell.swift */; };
 		846E97481DBA58D00053BC15 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E97471DBA58D00053BC15 /* HttpClient.swift */; };
+		8486E5D91DBF2EBC00E30CEB /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486E5D81DBF2EBC00E30CEB /* RecommendCycleView.swift */; };
 		848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CAC641DA2824B00A84C91 /* AppDelegate.swift */; };
 		848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CAC661DA2824B00A84C91 /* ViewController.swift */; };
 		848CAC6C1DA2824B00A84C91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CAC6B1DA2824B00A84C91 /* Assets.xcassets */; };
@@ -54,9 +57,12 @@
 		846122F91DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-ImageAndTitlePositioningExtension.swift"; sourceTree = "<group>"; };
 		846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveViewCell.swift; path = PageTitleView/LiveViewCell.swift; sourceTree = "<group>"; };
 		846122FD1DBA1767006D30B7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		846466641DBF43C9001CD1B9 /* SlideModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
+		846466661DBF48C6001CD1B9 /* CycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewCell.swift; sourceTree = "<group>"; };
 		8468C4AF1DA6377F00895200 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		846E97451DBA46F20053BC15 /* PrettyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PrettyCollectionCell.swift; path = ../PrettyCollectionCell.swift; sourceTree = "<group>"; };
 		846E97471DBA58D00053BC15 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		8486E5D81DBF2EBC00E30CEB /* RecommendCycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
 		848CAC611DA2824B00A84C91 /* douyuTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = douyuTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CAC641DA2824B00A84C91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848CAC661DA2824B00A84C91 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +163,8 @@
 			children = (
 				846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */,
 				846E97451DBA46F20053BC15 /* PrettyCollectionCell.swift */,
+				8486E5D81DBF2EBC00E30CEB /* RecommendCycleView.swift */,
+				846466661DBF48C6001CD1B9 /* CycleViewCell.swift */,
 				846122F61DB9F765006D30B7 /* headerView */,
 				84ACD9EA1DA5FC3F0078B65F /* PageTitleView */,
 			);
@@ -179,6 +187,7 @@
 			children = (
 				843600C21DBB3938003D1303 /* AnchorGroup.swift */,
 				843600C41DBBA9A2003D1303 /* AnchorModel.swift */,
+				846466641DBF43C9001CD1B9 /* SlideModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -395,13 +404,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ACD9BF1DA4BD590078B65F /* UIbarButtonItem+Extension.swift in Sources */,
+				846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */,
 				844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */,
 				8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */,
+				8486E5D91DBF2EBC00E30CEB /* RecommendCycleView.swift in Sources */,
 				844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */,
 				846122F51DB9EC97006D30B7 /* RecommendViewController.swift in Sources */,
 				844004E51DA3676400240EA2 /* DYTabbarController.swift in Sources */,
 				843600C11DBB2FAC003D1303 /* NSDate+Extension.swift in Sources */,
 				843600C31DBB3938003D1303 /* AnchorGroup.swift in Sources */,
+				846466651DBF43CA001CD1B9 /* SlideModel.swift in Sources */,
 				848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */,
 				848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */,
 				846E97481DBA58D00053BC15 /* HttpClient.swift in Sources */,
@@ -533,12 +545,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TH9KN2TTBL;
 				INFOPLIST_FILE = douyuTV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.yuanwu.douyuTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -549,6 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = TH9KN2TTBL;
 				INFOPLIST_FILE = douyuTV/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

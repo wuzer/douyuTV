@@ -25,10 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabbarContoller = DYTabbarController()
         
-//        for controller: UIViewController in tabbarContoller.childViewControllers {
-//            let view = controller
-//        }
-        
         window?.rootViewController = tabbarContoller
         window?.makeKeyAndVisible()
         

@@ -36,10 +36,6 @@ class PrettyCollectionCell: UICollectionViewCell {
         imageView.image = UIImage.init(named: "live_cell_default_phone")
         imageView.layer.cornerRadius = 5
         imageView.layer.masksToBounds = true
-//        let imageSize = imageView.frame.size
-//        UIImage.init().dy_cornerImage(size: CGSize(width: imageSize.width - 5, height: imageSize.height - 5), fillcolor: UIColor.white, completion: { (image) in
-//            imageView.image = image
-//        })
         return imageView
     }()
     

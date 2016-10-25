@@ -12,6 +12,7 @@ import HandyJSON
 class RecommendViewModel: NSObject {
     
     lazy var AnchorGroups : [AnchorGroup] = [AnchorGroup]()
+    lazy var SlideModels : [SlideModel] = [SlideModel]()
     fileprivate lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     fileprivate lazy var verticalGroup : AnchorGroup = AnchorGroup()
 
@@ -30,10 +31,10 @@ extension RecommendViewModel {
         HttpClient.requestData(type: .get, Path: KBigData, parameters: ["time": NSDate.getCurrentTime() as NSString]) { (response) in
             
             // convert dict
-            guard let responseDict = response as? [String: NSObject] else { return }
+            guard let responseDict = response as? [String: Any] else { return }
             
             // get data
-            guard let dataArray = responseDict["data"] as? [[String: NSObject]] else { return }
+            guard let dataArray = responseDict["data"] as? [[String: Any]] else { return }
             
 //            let anchors = AnchorGroup()
             self.bigDataGroup.tag_name = "热门"
@@ -51,13 +52,13 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get vertical
-        HttpClient.requestData(type: .get, Path: KVertical, parameters: parameter as [String : NSString]?) { (response) in
+        HttpClient.requestData(type: .get, Path: KVertical, parameters: parameter as [String : Any]?) { (response) in
             
             // convert dict
-            guard let responseDict = response as? [String: NSObject] else { return }
+            guard let responseDict = response as? [String: Any] else { return }
             
             // get data
-            guard let dataArray = responseDict["data"] as? [[String: NSObject]] else { return }
+            guard let dataArray = responseDict["data"] as? [[String: Any]] else { return }
             
             self.verticalGroup.tag_name = "颜值"
             self.verticalGroup.icon_name = "home_header_phone"
@@ -73,14 +74,14 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get hotcate
-        HttpClient.requestData(type: .get, Path: KHotcate, parameters: parameter as [String : NSString]?) { (response) in
+        HttpClient.requestData(type: .get, Path: KHotcate, parameters: parameter as [String : Any]?) { (response) in
 //            print(response)
             
             // convert dict
-            guard let responseDict = response as? [String: NSObject] else { return }
+            guard let responseDict = response as? [String: Any] else { return }
             
             // get data
-            guard let dataArray = responseDict["data"] as? [[String: NSObject]] else { return }
+            guard let dataArray = responseDict["data"] as? [[String: Any]] else { return }
             
             for dict in dataArray {
                 let anchor = JSONDeserializer<AnchorGroup>.deserializeFrom(dict: dict as NSDictionary)
@@ -100,5 +101,22 @@ extension RecommendViewModel {
             compelition()
         }
         
+    }
+    
+    func requestCycleData(compelition: @escaping () -> ()) {
+    
+        HttpClient.requestData(type: .get, Path: KSlide_6, parameters: ["version": "2.300"]) { (response) in
+         
+            guard let response = response as? [String : Any] else { return }
+            
+            guard let dataArray = response["data"] as? [[String : Any]] else { return }
+            
+            for dict in dataArray {
+                let slideModel = JSONDeserializer<SlideModel>.deserializeFrom(dict: dict as NSDictionary)
+                self.SlideModels.append(slideModel!)
+            }
+
+            compelition()
+        }
     }
 }

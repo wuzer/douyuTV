@@ -12,11 +12,11 @@ import Alamofire
 
 class HttpClient: NSObject {
 
-    class func requestData(type: HTTPMethod, Path: String, parameters: [String : NSString]? = nil, compelition: @escaping (_ respose: AnyObject) -> ()) {
+    class func requestData(type: HTTPMethod, Path: String, parameters: [String : Any]? = nil, compelition: @escaping (_ respose: AnyObject) -> ()) {
     
         // get type
         let method = type == .get ?  HTTPMethod.get : HTTPMethod.post
-        request(KBaseUrl + Path, method: method, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
+        Alamofire.request(KBaseUrl + Path, method: method, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
             
             guard let result = response.result.value else {
                 print(response.result.error)
