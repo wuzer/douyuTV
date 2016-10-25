@@ -17,6 +17,13 @@ class RecommendCycleView: UIView {
             collectionView.reloadData()
             
             pageControl.numberOfPages = slideModels?.count ?? 0
+            
+            let indexPath = NSIndexPath(item: (slideModels?.count)! * 10, section: 0)
+            collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
+            
+            // add timer
+            removetimer()
+            addTimer()
         }
     }
     
@@ -45,6 +52,8 @@ class RecommendCycleView: UIView {
         pageControl.numberOfPages = 3
         return pageControl
     }()
+    
+    var timer: Timer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -87,16 +96,17 @@ extension RecommendCycleView {
     }
 }
 
+// MARK: UICollectionViewDataSource, UICollectionViewDelegate
 extension RecommendCycleView : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return slideModels?.count ?? 0
+        return (slideModels?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KCycleCellIdentify, for: indexPath) as! CycleViewCell
         
-        let slidemodel = slideModels?[indexPath.item]
+        let slidemodel = slideModels?[indexPath.item % (slideModels?.count ?? 0)]
         cell.slideModel = slidemodel
         
         return cell
@@ -106,6 +116,41 @@ extension RecommendCycleView : UICollectionViewDataSource, UICollectionViewDeleg
         
         let offset = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
         
-        pageControl.currentPage = Int(offset / scrollView.bounds.width)
+        pageControl.currentPage = Int(offset / scrollView.bounds.width) % (slideModels?.count ?? 1)
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removetimer()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addTimer()
+    }
+    
 }
+
+// MARK:  add timer
+extension RecommendCycleView {
+    
+    func addTimer()  {
+        timer = Timer.init(timeInterval: 3.0, target: self, selector: #selector(scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .commonModes)
+    }
+    
+    fileprivate func removetimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc fileprivate func scrollToNext() {
+        
+        let currentOffsetX = collectionView.contentOffset.x
+        let offsetX = currentOffsetX + collectionView.bounds.width
+        
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+        
+        
+    }
+        
+}
+
