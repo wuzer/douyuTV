@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841E2BCA1DBF5D6200AA1C12 /* RecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E2BC91DBF5D6200AA1C12 /* RecommendGameView.swift */; };
+		841E2BCC1DBF95B600AA1C12 /* GameViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E2BCB1DBF95B600AA1C12 /* GameViewCell.swift */; };
 		843600BD1DBB29D9003D1303 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843600BC1DBB29D9003D1303 /* RecommendViewModel.swift */; };
 		843600BF1DBB2BAD003D1303 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843600BE1DBB2BAD003D1303 /* API.swift */; };
 		843600C11DBB2FAC003D1303 /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843600C01DBB2FAC003D1303 /* NSDate+Extension.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		1CD1EF3FE45EC91C81AE06F5 /* Pods-douyuTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-douyuTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-douyuTV/Pods-douyuTV.debug.xcconfig"; sourceTree = "<group>"; };
+		841E2BC91DBF5D6200AA1C12 /* RecommendGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendGameView.swift; sourceTree = "<group>"; };
+		841E2BCB1DBF95B600AA1C12 /* GameViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewCell.swift; sourceTree = "<group>"; };
 		843600BC1DBB29D9003D1303 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		843600BE1DBB2BAD003D1303 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		843600C01DBB2FAC003D1303 /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
@@ -164,7 +168,9 @@
 				846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */,
 				846E97451DBA46F20053BC15 /* PrettyCollectionCell.swift */,
 				8486E5D81DBF2EBC00E30CEB /* RecommendCycleView.swift */,
+				841E2BC91DBF5D6200AA1C12 /* RecommendGameView.swift */,
 				846466661DBF48C6001CD1B9 /* CycleViewCell.swift */,
+				841E2BCB1DBF95B600AA1C12 /* GameViewCell.swift */,
 				846122F61DB9F765006D30B7 /* headerView */,
 				84ACD9EA1DA5FC3F0078B65F /* PageTitleView */,
 			);
@@ -405,6 +411,7 @@
 			files = (
 				84ACD9BF1DA4BD590078B65F /* UIbarButtonItem+Extension.swift in Sources */,
 				846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */,
+				841E2BCC1DBF95B600AA1C12 /* GameViewCell.swift in Sources */,
 				844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */,
 				8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */,
 				8486E5D91DBF2EBC00E30CEB /* RecommendCycleView.swift in Sources */,
@@ -424,6 +431,7 @@
 				843600BF1DBB2BAD003D1303 /* API.swift in Sources */,
 				843600C51DBBA9A2003D1303 /* AnchorModel.swift in Sources */,
 				843600BD1DBB29D9003D1303 /* RecommendViewModel.swift in Sources */,
+				841E2BCA1DBF5D6200AA1C12 /* RecommendGameView.swift in Sources */,
 				846122FE1DBA1767006D30B7 /* UIImage+Extension.swift in Sources */,
 				844004F11DA369EC00240EA2 /* LiveViewController.swift in Sources */,
 				846122F81DB9F795006D30B7 /* CollectionHeaderView.swift in Sources */,

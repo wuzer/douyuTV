@@ -14,6 +14,7 @@ class AnchorGroup: HandyJSON {
     var room_list: [AnchorModel] = [AnchorModel]()
     var tag_name: String?
     var icon_name: String = "home_header_normal"
+    var icon_url: String?
     
     required init() {
         
