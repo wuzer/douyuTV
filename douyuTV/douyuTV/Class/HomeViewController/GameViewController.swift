@@ -12,6 +12,7 @@ private let KItemMargin: CGFloat   = 10
 private let KItemWidth: CGFloat    = (KScreenWidth - 2 * KItemMargin) / 3
 private let KItemHeight: CGFloat   = KItemWidth * 6 / 5
 private let KHeaderHeight: CGFloat = 49
+private let KGameHeight: CGFloat   = 90
 private let KGameCellIdentify      = "KGameCellIdentify"
 private let KHeaderIdentify        = "KHeaderIdentify"
 
@@ -37,6 +38,23 @@ class GameViewController: UIViewController {
         return collectionView
     }()
     
+    fileprivate lazy var topHeaderView: CollectionHeaderView = {
+    
+        let rect = CGRect(x: 0, y: -(KHeaderHeight + KGameHeight), width: KScreenWidth, height: KHeaderHeight)
+        let headerView = CollectionHeaderView(frame: rect)
+        headerView.iconView.image = UIImage.init(named: "Img_orange")
+        headerView.titleView.text = "常见"
+        headerView.moreButton.isHidden = true
+        return headerView
+    }()
+    
+    fileprivate lazy var gameView: RecommendGameView = {
+    
+        let rect = CGRect(x: 0, y: -KGameHeight, width: KScreenWidth, height: KGameHeight)
+        let gameView = RecommendGameView(frame: rect)
+        return gameView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,6 +71,9 @@ extension GameViewController {
     func setupSubViews() {
     
         view.addSubview(collectionView)
+        collectionView.addSubview(topHeaderView)
+        collectionView.addSubview(gameView)
+        collectionView.contentInset = UIEdgeInsetsMake(KHeaderHeight + KGameHeight, 0, 0, 0)
     }
     
 }
@@ -64,6 +85,13 @@ extension GameViewController {
     
         gameViewModel.loadGameData {
             self.collectionView.reloadData()
+            
+//            var tempArray = [BaseModel]()
+//            for i in 0..<10 {
+//                tempArray.append(self.gameViewModel.gameModels[i])
+//            }
+
+            self.gameView.anchorGroups = Array(self.gameViewModel.gameModels[0..<10])
         }
     }
 }

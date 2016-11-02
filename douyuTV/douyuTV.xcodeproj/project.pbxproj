@@ -19,6 +19,7 @@
 		844004F11DA369EC00240EA2 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F01DA369EC00240EA2 /* LiveViewController.swift */; };
 		844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F21DA369FD00240EA2 /* ProfileViewController.swift */; };
 		844004F51DA36A1600240EA2 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F41DA36A1600240EA2 /* FollowViewController.swift */; };
+		84464CC91DCA2C4D005847B5 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84464CC81DCA2C4D005847B5 /* AmuseViewController.swift */; };
 		844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F43411DB488B700B60177 /* UIColor+Extension.swift */; };
 		846122F51DB9EC97006D30B7 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F41DB9EC97006D30B7 /* RecommendViewController.swift */; };
 		846122F81DB9F795006D30B7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F71DB9F795006D30B7 /* CollectionHeaderView.swift */; };
@@ -59,6 +60,7 @@
 		844004F01DA369EC00240EA2 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		844004F21DA369FD00240EA2 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		844004F41DA36A1600240EA2 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		84464CC81DCA2C4D005847B5 /* AmuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
 		844F43411DB488B700B60177 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		846122F41DB9EC97006D30B7 /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		846122F71DB9F795006D30B7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				844004EE1DA369DE00240EA2 /* HomeViewController.swift */,
 				846122F41DB9EC97006D30B7 /* RecommendViewController.swift */,
 				84B285D81DBFA985007FDF1F /* GameViewController.swift */,
+				84464CC81DCA2C4D005847B5 /* AmuseViewController.swift */,
 			);
 			path = HomeViewController;
 			sourceTree = "<group>";
@@ -175,14 +178,14 @@
 		844004EA1DA3690B00240EA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84ACD9EA1DA5FC3F0078B65F /* PageTitleView */,
+				846122F61DB9F765006D30B7 /* headerView */,
 				846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */,
 				846E97451DBA46F20053BC15 /* PrettyCollectionCell.swift */,
 				8486E5D81DBF2EBC00E30CEB /* RecommendCycleView.swift */,
 				841E2BC91DBF5D6200AA1C12 /* RecommendGameView.swift */,
 				846466661DBF48C6001CD1B9 /* CycleViewCell.swift */,
 				841E2BCB1DBF95B600AA1C12 /* GameViewCell.swift */,
-				846122F61DB9F765006D30B7 /* headerView */,
-				84ACD9EA1DA5FC3F0078B65F /* PageTitleView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				848CAC651DA2824B00A84C91 /* AppDelegate.swift in Sources */,
 				846E97481DBA58D00053BC15 /* HttpClient.swift in Sources */,
 				846122FC1DBA0F1D006D30B7 /* LiveViewCell.swift in Sources */,
+				84464CC91DCA2C4D005847B5 /* AmuseViewController.swift in Sources */,
 				844004EF1DA369DE00240EA2 /* HomeViewController.swift in Sources */,
 				846122FA1DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift in Sources */,
 				84ACD9EC1DA5FC740078B65F /* PageTitleView.swift in Sources */,
@@ -490,6 +494,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -512,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -539,6 +544,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -555,7 +561,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -567,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CD1EF3FE45EC91C81AE06F5 /* Pods-douyuTV.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -586,6 +593,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 98FBCD18FFA51B03B8BA3766 /* Pods-douyuTV.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -609,7 +617,7 @@
 				848CAC721DA2824B00A84C91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		848CAC731DA2824B00A84C91 /* Build configuration list for PBXNativeTarget "douyuTV" */ = {
 			isa = XCConfigurationList;
@@ -618,7 +626,7 @@
 				848CAC751DA2824B00A84C91 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

@@ -13,15 +13,9 @@ private let KGameCellIdentify       = "KGameCellIdentify"
 
 class RecommendGameView: UIView {
 
-    var anchorGroups: [AnchorGroup]? {
+    var anchorGroups: [BaseModel]? {
         didSet {
-            anchorGroups?.removeFirst()
-            anchorGroups?.removeFirst()
             
-            let anchor = AnchorGroup()
-            anchor.tag_name = "更多"
-            
-            anchorGroups?.append(anchor)
             collectionView.reloadData()
         }
     }

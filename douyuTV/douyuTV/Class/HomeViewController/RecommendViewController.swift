@@ -60,7 +60,7 @@ class RecommendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor.red
+        
         setupUI()
         loadData()
     }
@@ -88,7 +88,16 @@ extension RecommendViewController {
             
             self.collectionView.reloadData()
             
-            self.gameView.anchorGroups = self.recommendViewModel.AnchorGroups
+            var anchors = self.recommendViewModel.AnchorGroups
+            
+            anchors.removeFirst()
+            anchors.removeFirst()
+            
+            let moreAnchor = AnchorGroup()
+            moreAnchor.tag_name = "更多"
+            anchors.append(moreAnchor)
+            
+            self.gameView.anchorGroups = anchors
         }
         
         recommendViewModel.requestCycleData {

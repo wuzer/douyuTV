@@ -9,7 +9,7 @@ target 'douyuTV' do
   pod 'Alamofire', '~> 4.0'
   pod 'UIColor_Hex_Swift'
   pod 'SnapKit', '~> 3.0.2'
-  pod 'HandyJSON', '~> 1.1.0'
+  pod 'HandyJSON', '~> 1.2.0'
   pod 'Kingfisher', '~> 3.0'
 end
 
