@@ -15,6 +15,7 @@ private let KCellIdentify           = "KCellIdentify"
 
 class AmuseViewController: UIViewController {
 
+    fileprivate lazy var amuseViewModel = AmuseViewModel()
     fileprivate lazy var collectionView: UICollectionView = {
         
         let flowLayout = UICollectionViewFlowLayout()
@@ -36,33 +37,47 @@ class AmuseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        loadData()
     }
 
 }
 
+// MARK: set UI
 extension AmuseViewController {
     
-    func setupUI() {
+    fileprivate func setupUI() {
     
         view.addSubview(collectionView)
     }
 
 }
 
+// MARK: loadData
+extension AmuseViewController {
+
+    fileprivate func loadData() {
+        amuseViewModel.loadAmuseData { 
+         
+            self.collectionView.reloadData()
+        }
+    }
+}
+
 extension AmuseViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 8
+        return self.amuseViewModel.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 4
+         return amuseViewModel.anchorGroups[section].room_list.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KCellIdentify, for: indexPath)
-
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KCellIdentify, for: indexPath) as! LiveViewCell
+        let anchorGroup = amuseViewModel.anchorGroups[indexPath.section]
+        cell.anchor = anchorGroup.room_list[indexPath.item]
         return cell
     }
     

@@ -14,7 +14,7 @@ class CycleViewCell: UICollectionViewCell {
         didSet {
             
             let imageUrl = URL.init(string: (slideModel?.pic_url)!)
-            imageView.kf.setImage(with: imageUrl)
+            imageView.kf.setImage(with: imageUrl, placeholder: UIImage.init(named: "Img_default"))
             
             titleLabel.text = slideModel?.title
         }

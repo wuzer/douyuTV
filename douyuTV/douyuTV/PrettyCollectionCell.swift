@@ -69,7 +69,7 @@ class PrettyCollectionCell: UICollectionViewCell {
             
             // icon
             guard let iconUrl = URL.init(string: (anchor?.vertical_src)!) else { return }
-            prettyView.kf.setImage(with: iconUrl)
+            prettyView.kf.setImage(with: iconUrl, placeholder: UIImage.init(named: "live_cell_default_phone"))
         }
     }
 

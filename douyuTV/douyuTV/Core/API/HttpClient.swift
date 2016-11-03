@@ -19,7 +19,7 @@ class HttpClient: NSObject {
         Alamofire.request(APIBaseUrl + Path, method: method, parameters: parameters, encoding: URLEncoding.default).responseJSON { (response) in
             
             guard let result = response.result.value else {
-                print(response.result.error)
+                print(response.result.error ?? "net error")
                 return
             }
             compelition(result as AnyObject)

@@ -30,11 +30,6 @@ extension GameViewModel {
                 self.gameModels.append(game!)
             }
             
-//            for obj in self.gameModels {
-//                print(obj.tag_name!)
-//                print(obj.icon_url!)
-//            }
-            
             compelition()
         }
         

@@ -72,7 +72,6 @@ class RecommendCycleView: UIView {
         let flowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.itemSize = collectionView.bounds.size
     }
-    
 }
 
 extension RecommendCycleView {

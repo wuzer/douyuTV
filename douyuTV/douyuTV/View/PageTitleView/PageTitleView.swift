@@ -74,7 +74,7 @@ extension PageTitleView {
         let labelW: CGFloat = frame.width / CGFloat(titles.count)
 
         for (index, title) in titles.enumerated() {
-            print("Item \(index): \(title)")
+//            print("Item \(index): \(title)")
             // 创建label
             let label = UILabel()
             

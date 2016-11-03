@@ -74,7 +74,7 @@ class LiveViewCell: UICollectionViewCell {
             
             // icon
             guard let iconUrl = URL.init(string: (anchor?.vertical_src)!) else { return }
-            liveImage.kf.setImage(with: iconUrl)
+            liveImage.kf.setImage(with: iconUrl, placeholder: UIImage.init(named: "Img_default"))
 
             titleView.text = anchor?.room_name
             
