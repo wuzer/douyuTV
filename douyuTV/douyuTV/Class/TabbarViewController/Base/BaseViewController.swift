@@ -12,6 +12,8 @@ class BaseViewController: UIViewController {
 
     var contentView: UIView?
     
+    fileprivate var lastContentOffset: CGFloat = 0
+    
     fileprivate lazy var animationImageView: UIImageView = { [unowned self] in
         let imageView = UIImageView(image: UIImage.init(named: "img_loading_1"))
         imageView.center = self.view.center
@@ -52,4 +54,16 @@ extension BaseViewController {
         
         contentView?.isHidden = false
     }
+}
+
+extension BaseViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        lastContentOffset = scrollView.contentOffset.y
+    }
+
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        
+    }
+    
 }

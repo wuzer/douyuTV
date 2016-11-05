@@ -57,7 +57,6 @@ class GameViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         loadData()
 

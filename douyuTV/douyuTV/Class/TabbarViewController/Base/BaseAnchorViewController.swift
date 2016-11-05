@@ -118,14 +118,14 @@ extension BaseAnchorViewController: UICollectionViewDelegate {
     private func presentShowViewController() {
         
         let showViewController = RoomShowViewController()
-        
+        showViewController.hidesBottomBarWhenPushed = true
         present(showViewController, animated: true, completion: nil)
     }
     
     private func pushNormalViewController() {
         
         let normalViewController = RoomNormalViewController()
-        
+        normalViewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(normalViewController, animated: true)
     }
 }

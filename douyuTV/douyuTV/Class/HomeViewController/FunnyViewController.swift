@@ -17,7 +17,7 @@ class FunnyViewController: BaseAnchorViewController {
 }
 
 extension FunnyViewController {
-
+    
     override func setupUI() {
         super.setupUI()
         
