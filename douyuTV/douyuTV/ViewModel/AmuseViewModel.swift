@@ -11,6 +11,6 @@ import UIKit
 class AmuseViewModel: BaseViewModel {
 
     func loadAmuseData(compelition:@escaping () -> ()) {
-        loadAnchorData(path: APIGetHotRoom, compelition: compelition)
+        loadAnchorData(isGroup: true, path: APIGetHotRoom, compelition: compelition)
     }
 }

@@ -17,16 +17,26 @@ class BaseViewModel: NSObject {
 
 extension BaseViewModel {
     
-    func loadAnchorData(path: String, parameters: [String: Any]? = nil, compelition: @escaping () -> ()) {
+    func loadAnchorData(isGroup: Bool, path: String, parameters: [String: Any]? = nil, compelition: @escaping () -> ()) {
         
         HttpClient.requestData(type: .get, Path: path, parameters: parameters) { (response) in
             guard let responseDict = response as? [String: Any] else { return }
             guard let dictArray = responseDict["data"] as? [[String: Any]] else { return }
             
-            for dict in dictArray {
+            if isGroup {
+                for dict in dictArray {
+                    
+                    let anchor = JSONDeserializer<AnchorGroup>.deserializeFrom(dict: dict as NSDictionary?)
+                    self.anchorGroups.append(anchor!)
+                }
+            } else {
                 
-                let anchor = JSONDeserializer<AnchorGroup>.deserializeFrom(dict: dict as NSDictionary?)
-                self.anchorGroups.append(anchor!)
+                let anchors = AnchorGroup()
+                for dict in dictArray {
+                    let anchor = JSONDeserializer<AnchorModel>.deserializeFrom(dict: dict as NSDictionary?)
+                    anchors.room_list.append(anchor!)
+                }
+                self.anchorGroups.append(anchors)
             }
             
             compelition()

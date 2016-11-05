@@ -28,17 +28,12 @@ class HomeViewController: UIViewController {
         let height = KScreenHeigth - kNavigationAndStatusBarHeight - KTitleHeight - kTabBarHeight
         let contentFrame = CGRect(x: 0, y: kNavigationAndStatusBarHeight + KTitleHeight, width: KScreenWidth, height: height)
         
-        // 确定子控制器
+        // add child Controller
         var childViewControllers = [UIViewController]()
         childViewControllers.append(RecommendViewController())
         childViewControllers.append(GameViewController())
         childViewControllers.append(AmuseViewController())
-        for _ in 0..<1 {
-            let viewController = UIViewController()
-            viewController.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
-            childViewControllers.append(viewController)
-        }
-        
+        childViewControllers.append(FunnyViewController())
         
         let contentView = PageContentView(frame: contentFrame, childViewContollers: childViewControllers, parentViewController: self)
         contentView.delegate = self

@@ -73,7 +73,7 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get hotcate
-        loadAnchorData(path: APIHotcate, parameters: parameter) {
+        loadAnchorData(isGroup: true, path: APIHotcate, parameters: parameter) {
             globalGroup.leave()
         }
 //        HttpClient.requestData(type: .get, Path: APIHotcate, parameters: parameter as [String : Any]?) { (response) in
