@@ -77,7 +77,8 @@ extension BaseAnchorViewController {
     }
 }
 
-extension BaseAnchorViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+// MARK: UICollectionViewDataSource
+extension BaseAnchorViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return self.baseViewModel.anchorGroups.count
@@ -95,6 +96,11 @@ extension BaseAnchorViewController: UICollectionViewDataSource, UICollectionView
         return cell
     }
     
+}
+
+// MARK: UICollectionViewDelegate
+extension BaseAnchorViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KHeaderIdentify, for: indexPath) as! CollectionHeaderView
@@ -103,5 +109,24 @@ extension BaseAnchorViewController: UICollectionViewDataSource, UICollectionView
         return headerView
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let anchor = baseViewModel.anchorGroups[indexPath.section].room_list[indexPath.item]
+        anchor.isVertical == 0 ? pushNormalViewController() : presentShowViewController()
+    }
+
+    private func presentShowViewController() {
+        
+        let showViewController = RoomShowViewController()
+        
+        present(showViewController, animated: true, completion: nil)
+    }
+    
+    private func pushNormalViewController() {
+        
+        let normalViewController = RoomNormalViewController()
+        
+        navigationController?.pushViewController(normalViewController, animated: true)
+    }
 }
 

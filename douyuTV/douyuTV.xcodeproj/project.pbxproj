@@ -32,6 +32,9 @@
 		8463C5CC1DCDB7F400CEEC4F /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5CB1DCDB7F400CEEC4F /* FunnyViewController.swift */; };
 		8463C5CE1DCDBD3400CEEC4F /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5CD1DCDBD3400CEEC4F /* FunnyViewModel.swift */; };
 		8463C5D01DCDC24B00CEEC4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5CF1DCDC24B00CEEC4F /* BaseViewController.swift */; };
+		8463C5D31DCDC90800CEEC4F /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5D21DCDC90800CEEC4F /* RoomShowViewController.swift */; };
+		8463C5D51DCDC93900CEEC4F /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5D41DCDC93900CEEC4F /* RoomNormalViewController.swift */; };
+		8463C5D71DCDCC1A00CEEC4F /* DYNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5D61DCDCC1A00CEEC4F /* DYNavigationController.swift */; };
 		846466651DBF43CA001CD1B9 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466641DBF43C9001CD1B9 /* SlideModel.swift */; };
 		846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466661DBF48C6001CD1B9 /* CycleViewCell.swift */; };
 		8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C4AF1DA6377F00895200 /* PageContentView.swift */; };
@@ -82,6 +85,9 @@
 		8463C5CB1DCDB7F400CEEC4F /* FunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		8463C5CD1DCDBD3400CEEC4F /* FunnyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
 		8463C5CF1DCDC24B00CEEC4F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8463C5D21DCDC90800CEEC4F /* RoomShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		8463C5D41DCDC93900CEEC4F /* RoomNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		8463C5D61DCDCC1A00CEEC4F /* DYNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DYNavigationController.swift; sourceTree = "<group>"; };
 		846466641DBF43C9001CD1B9 /* SlideModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 		846466661DBF48C6001CD1B9 /* CycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewCell.swift; sourceTree = "<group>"; };
 		8468C4AF1DA6377F00895200 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 				844004E81DA368C000240EA2 /* LiveViewContoller */,
 				844004E91DA368C000240EA2 /* ProfileViewController */,
 				844004E11DA3664900240EA2 /* TabbarViewController */,
+				8463C5D11DCDC8D700CEEC4F /* Room */,
 				84B246631DCB19F000391B8A /* Base */,
 			);
 			path = Class;
@@ -158,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				844004E41DA3676400240EA2 /* DYTabbarController.swift */,
+				8463C5D61DCDCC1A00CEEC4F /* DYNavigationController.swift */,
 			);
 			path = TabbarViewController;
 			sourceTree = "<group>";
@@ -253,6 +261,15 @@
 				846122F71DB9F795006D30B7 /* CollectionHeaderView.swift */,
 			);
 			path = headerView;
+			sourceTree = "<group>";
+		};
+		8463C5D11DCDC8D700CEEC4F /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				8463C5D21DCDC90800CEEC4F /* RoomShowViewController.swift */,
+				8463C5D41DCDC93900CEEC4F /* RoomNormalViewController.swift */,
+			);
+			path = Room;
 			sourceTree = "<group>";
 		};
 		848CAC581DA2824B00A84C91 = {
@@ -472,6 +489,7 @@
 				846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */,
 				841E2BCC1DBF95B600AA1C12 /* GameViewCell.swift in Sources */,
 				844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */,
+				8463C5D71DCDCC1A00CEEC4F /* DYNavigationController.swift in Sources */,
 				8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */,
 				8463C5CA1DCDA82E00CEEC4F /* AmuseMenuViewCell.swift in Sources */,
 				84464CCD1DCB0F08005847B5 /* BaseViewModel.swift in Sources */,
@@ -496,6 +514,7 @@
 				84B246621DCB198E00391B8A /* BaseAnchorView.swift in Sources */,
 				846122FA1DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift in Sources */,
 				84B246651DCB1A1100391B8A /* BaseAnchorViewController.swift in Sources */,
+				8463C5D31DCDC90800CEEC4F /* RoomShowViewController.swift in Sources */,
 				84ACD9EC1DA5FC740078B65F /* PageTitleView.swift in Sources */,
 				84B246681DCB2A8600391B8A /* AmuseMenuView.swift in Sources */,
 				84B285DD1DBFBA07007FDF1F /* GameModel.swift in Sources */,
@@ -505,6 +524,7 @@
 				84B285DF1DBFBBF4007FDF1F /* BaseModel.swift in Sources */,
 				843600BD1DBB29D9003D1303 /* RecommendViewModel.swift in Sources */,
 				841E2BCA1DBF5D6200AA1C12 /* RecommendGameView.swift in Sources */,
+				8463C5D51DCDC93900CEEC4F /* RoomNormalViewController.swift in Sources */,
 				846122FE1DBA1767006D30B7 /* UIImage+Extension.swift in Sources */,
 				844004F11DA369EC00240EA2 /* LiveViewController.swift in Sources */,
 				846122F81DB9F795006D30B7 /* CollectionHeaderView.swift in Sources */,

@@ -33,7 +33,7 @@ class DYTabbarController: UITabBarController {
         childController.tabBarItem.image = UIImage.init(named: imageName)
         
         // 创建子控制器
-        let childNavigation = UINavigationController(rootViewController: childController)
+        let childNavigation = DYNavigationController(rootViewController: childController)
         
         // 添加到tabbarContoller
         addChildViewController(childNavigation)
