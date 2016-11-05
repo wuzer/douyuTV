@@ -66,8 +66,7 @@ class HomeViewController: UIViewController {
         
         // 添加Contentview
         view.addSubview(pageContentView)
-        pageContentView.backgroundColor = UIColor.red
-        
+//        pageContentView.backgroundColor = UIColor.red
     }
     
     

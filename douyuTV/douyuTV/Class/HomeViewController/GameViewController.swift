@@ -12,7 +12,7 @@ private let KItemMargin: CGFloat   = 10
 private let KItemWidth: CGFloat    = (KScreenWidth - 2 * KItemMargin) / 3
 private let KItemHeight: CGFloat   = KItemWidth * 6 / 5
 private let KHeaderHeight: CGFloat = 49
-private let KGameHeight: CGFloat   = 90
+private let KGameViewH: CGFloat   = 90
 private let KGameCellIdentify      = "KGameCellIdentify"
 private let KHeaderIdentify        = "KHeaderIdentify"
 
@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
     
     fileprivate lazy var topHeaderView: CollectionHeaderView = {
     
-        let rect = CGRect(x: 0, y: -(KHeaderHeight + KGameHeight), width: KScreenWidth, height: KHeaderHeight)
+        let rect = CGRect(x: 0, y: -(KHeaderHeight + KGameViewH), width: KScreenWidth, height: KHeaderHeight)
         let headerView = CollectionHeaderView(frame: rect)
         headerView.iconView.image = UIImage.init(named: "Img_orange")
         headerView.titleView.text = "常见"
@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
     
     fileprivate lazy var gameView: RecommendGameView = {
     
-        let rect = CGRect(x: 0, y: -KGameHeight, width: KScreenWidth, height: KGameHeight)
+        let rect = CGRect(x: 0, y: -KGameViewH, width: KScreenWidth, height: KGameViewH)
         let gameView = RecommendGameView(frame: rect)
         return gameView
     }()

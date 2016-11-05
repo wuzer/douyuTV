@@ -21,12 +21,14 @@
 		844004F51DA36A1600240EA2 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844004F41DA36A1600240EA2 /* FollowViewController.swift */; };
 		84464CC91DCA2C4D005847B5 /* AmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84464CC81DCA2C4D005847B5 /* AmuseViewController.swift */; };
 		84464CCB1DCB040C005847B5 /* AmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84464CCA1DCB040C005847B5 /* AmuseViewModel.swift */; };
+		84464CCD1DCB0F08005847B5 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84464CCC1DCB0F08005847B5 /* BaseViewModel.swift */; };
 		844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F43411DB488B700B60177 /* UIColor+Extension.swift */; };
 		846122F51DB9EC97006D30B7 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F41DB9EC97006D30B7 /* RecommendViewController.swift */; };
 		846122F81DB9F795006D30B7 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F71DB9F795006D30B7 /* CollectionHeaderView.swift */; };
 		846122FA1DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122F91DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift */; };
 		846122FC1DBA0F1D006D30B7 /* LiveViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */; };
 		846122FE1DBA1767006D30B7 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846122FD1DBA1767006D30B7 /* UIImage+Extension.swift */; };
+		8463C5CA1DCDA82E00CEEC4F /* AmuseMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5C91DCDA82E00CEEC4F /* AmuseMenuViewCell.swift */; };
 		846466651DBF43CA001CD1B9 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466641DBF43C9001CD1B9 /* SlideModel.swift */; };
 		846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466661DBF48C6001CD1B9 /* CycleViewCell.swift */; };
 		8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C4AF1DA6377F00895200 /* PageContentView.swift */; };
@@ -40,6 +42,9 @@
 		84ACD9BF1DA4BD590078B65F /* UIbarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD9BE1DA4BD590078B65F /* UIbarButtonItem+Extension.swift */; };
 		84ACD9EC1DA5FC740078B65F /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD9EB1DA5FC740078B65F /* PageTitleView.swift */; };
 		84ACD9EE1DA606A10078B65F /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACD9ED1DA606A10078B65F /* Common.swift */; };
+		84B246621DCB198E00391B8A /* BaseAnchorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B246611DCB198E00391B8A /* BaseAnchorView.swift */; };
+		84B246651DCB1A1100391B8A /* BaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B246641DCB1A1100391B8A /* BaseAnchorViewController.swift */; };
+		84B246681DCB2A8600391B8A /* AmuseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B246671DCB2A8600391B8A /* AmuseMenuView.swift */; };
 		84B285D91DBFA985007FDF1F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B285D81DBFA985007FDF1F /* GameViewController.swift */; };
 		84B285DB1DBFB5E3007FDF1F /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B285DA1DBFB5E3007FDF1F /* GameViewModel.swift */; };
 		84B285DD1DBFBA07007FDF1F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B285DC1DBFBA07007FDF1F /* GameModel.swift */; };
@@ -63,12 +68,14 @@
 		844004F41DA36A1600240EA2 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		84464CC81DCA2C4D005847B5 /* AmuseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewController.swift; sourceTree = "<group>"; };
 		84464CCA1DCB040C005847B5 /* AmuseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseViewModel.swift; sourceTree = "<group>"; };
+		84464CCC1DCB0F08005847B5 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		844F43411DB488B700B60177 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		846122F41DB9EC97006D30B7 /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		846122F71DB9F795006D30B7 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		846122F91DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton-ImageAndTitlePositioningExtension.swift"; sourceTree = "<group>"; };
 		846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveViewCell.swift; path = PageTitleView/LiveViewCell.swift; sourceTree = "<group>"; };
 		846122FD1DBA1767006D30B7 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		8463C5C91DCDA82E00CEEC4F /* AmuseMenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseMenuViewCell.swift; sourceTree = "<group>"; };
 		846466641DBF43C9001CD1B9 /* SlideModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 		846466661DBF48C6001CD1B9 /* CycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewCell.swift; sourceTree = "<group>"; };
 		8468C4AF1DA6377F00895200 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +91,9 @@
 		84ACD9BE1DA4BD590078B65F /* UIbarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIbarButtonItem+Extension.swift"; sourceTree = "<group>"; };
 		84ACD9EB1DA5FC740078B65F /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		84ACD9ED1DA606A10078B65F /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		84B246611DCB198E00391B8A /* BaseAnchorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseAnchorView.swift; path = headerView/BaseAnchorView.swift; sourceTree = "<group>"; };
+		84B246641DCB1A1100391B8A /* BaseAnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnchorViewController.swift; sourceTree = "<group>"; };
+		84B246671DCB2A8600391B8A /* AmuseMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseMenuView.swift; sourceTree = "<group>"; };
 		84B285D81DBFA985007FDF1F /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		84B285DA1DBFB5E3007FDF1F /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		84B285DC1DBFBA07007FDF1F /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -116,6 +126,7 @@
 		843600BB1DBB29AC003D1303 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				84464CCC1DCB0F08005847B5 /* BaseViewModel.swift */,
 				843600BC1DBB29D9003D1303 /* RecommendViewModel.swift */,
 				84B285DA1DBFB5E3007FDF1F /* GameViewModel.swift */,
 				84464CCA1DCB040C005847B5 /* AmuseViewModel.swift */,
@@ -131,6 +142,7 @@
 				844004E81DA368C000240EA2 /* LiveViewContoller */,
 				844004E91DA368C000240EA2 /* ProfileViewController */,
 				844004E11DA3664900240EA2 /* TabbarViewController */,
+				84B246631DCB19F000391B8A /* Base */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -183,9 +195,11 @@
 			children = (
 				84ACD9EA1DA5FC3F0078B65F /* PageTitleView */,
 				846122F61DB9F765006D30B7 /* headerView */,
+				84B246661DCB2A7100391B8A /* MenuView */,
 				846122FB1DBA0F1D006D30B7 /* LiveViewCell.swift */,
 				846E97451DBA46F20053BC15 /* PrettyCollectionCell.swift */,
 				8486E5D81DBF2EBC00E30CEB /* RecommendCycleView.swift */,
+				84B246611DCB198E00391B8A /* BaseAnchorView.swift */,
 				841E2BC91DBF5D6200AA1C12 /* RecommendGameView.swift */,
 				846466661DBF48C6001CD1B9 /* CycleViewCell.swift */,
 				841E2BCB1DBF95B600AA1C12 /* GameViewCell.swift */,
@@ -294,6 +308,24 @@
 				8468C4AF1DA6377F00895200 /* PageContentView.swift */,
 			);
 			path = PageTitleView;
+			sourceTree = "<group>";
+		};
+		84B246631DCB19F000391B8A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84B246641DCB1A1100391B8A /* BaseAnchorViewController.swift */,
+			);
+			name = Base;
+			path = TabbarViewController/Base;
+			sourceTree = "<group>";
+		};
+		84B246661DCB2A7100391B8A /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				84B246671DCB2A8600391B8A /* AmuseMenuView.swift */,
+				8463C5C91DCDA82E00CEEC4F /* AmuseMenuViewCell.swift */,
+			);
+			path = MenuView;
 			sourceTree = "<group>";
 		};
 		E25E31C02D01146D92327AC7 /* Frameworks */ = {
@@ -432,6 +464,8 @@
 				841E2BCC1DBF95B600AA1C12 /* GameViewCell.swift in Sources */,
 				844004F31DA369FD00240EA2 /* ProfileViewController.swift in Sources */,
 				8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */,
+				8463C5CA1DCDA82E00CEEC4F /* AmuseMenuViewCell.swift in Sources */,
+				84464CCD1DCB0F08005847B5 /* BaseViewModel.swift in Sources */,
 				8486E5D91DBF2EBC00E30CEB /* RecommendCycleView.swift in Sources */,
 				844F43421DB488B700B60177 /* UIColor+Extension.swift in Sources */,
 				84B285DB1DBFB5E3007FDF1F /* GameViewModel.swift in Sources */,
@@ -448,8 +482,11 @@
 				846122FC1DBA0F1D006D30B7 /* LiveViewCell.swift in Sources */,
 				84464CC91DCA2C4D005847B5 /* AmuseViewController.swift in Sources */,
 				844004EF1DA369DE00240EA2 /* HomeViewController.swift in Sources */,
+				84B246621DCB198E00391B8A /* BaseAnchorView.swift in Sources */,
 				846122FA1DBA0AC5006D30B7 /* UIButton-ImageAndTitlePositioningExtension.swift in Sources */,
+				84B246651DCB1A1100391B8A /* BaseAnchorViewController.swift in Sources */,
 				84ACD9EC1DA5FC740078B65F /* PageTitleView.swift in Sources */,
+				84B246681DCB2A8600391B8A /* AmuseMenuView.swift in Sources */,
 				84B285DD1DBFBA07007FDF1F /* GameModel.swift in Sources */,
 				843600BF1DBB2BAD003D1303 /* API.swift in Sources */,
 				843600C51DBBA9A2003D1303 /* AnchorModel.swift in Sources */,

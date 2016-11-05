@@ -9,9 +9,8 @@
 import UIKit
 import HandyJSON
 
-class RecommendViewModel: NSObject {
-    
-    lazy var AnchorGroups : [AnchorGroup] = [AnchorGroup]()
+class RecommendViewModel: BaseViewModel {
+
     lazy var SlideModels : [SlideModel] = [SlideModel]()
     fileprivate lazy var bigDataGroup : AnchorGroup = AnchorGroup()
     fileprivate lazy var verticalGroup : AnchorGroup = AnchorGroup()
@@ -74,29 +73,32 @@ extension RecommendViewModel {
         
         globalGroup.enter()
         // get hotcate
-        HttpClient.requestData(type: .get, Path: APIHotcate, parameters: parameter as [String : Any]?) { (response) in
-//            print(response)
-            
-            // convert dict
-            guard let responseDict = response as? [String: Any] else { return }
-            
-            // get data
-            guard let dataArray = responseDict["data"] as? [[String: Any]] else { return }
-            
-            for dict in dataArray {
-                let anchor = JSONDeserializer<AnchorGroup>.deserializeFrom(dict: dict as NSDictionary)
-                self.AnchorGroups.append(anchor!)
-            }
-//            print("请求--------2-12------")
+        loadAnchorData(path: APIHotcate, parameters: parameter) {
             globalGroup.leave()
         }
+//        HttpClient.requestData(type: .get, Path: APIHotcate, parameters: parameter as [String : Any]?) { (response) in
+////            print(response)
+//            
+//            // convert dict
+//            guard let responseDict = response as? [String: Any] else { return }
+//            
+//            // get data
+//            guard let dataArray = responseDict["data"] as? [[String: Any]] else { return }
+//            
+//            for dict in dataArray {
+//                let anchor = JSONDeserializer<AnchorGroup>.deserializeFrom(dict: dict as NSDictionary)
+//                self.anchorGroups.append(anchor!)
+//            }
+////            print("请求--------2-12------")
+//            globalGroup.leave()
+//        }
         
         // request finish
         globalGroup.notify(queue: DispatchQueue.main) { 
 //            print("请求--------comeplition------")
             
-            self.AnchorGroups.insert(self.verticalGroup, at: 0)
-            self.AnchorGroups.insert(self.bigDataGroup, at: 0)
+            self.anchorGroups.insert(self.verticalGroup, at: 0)
+            self.anchorGroups.insert(self.bigDataGroup, at: 0)
  
             compelition()
         }
