@@ -51,6 +51,8 @@ extension AmuseViewController {
             tempAnchors.removeFirst()
             // assignment
             self.menuView.anchors = tempAnchors
+            
+            self.showHaveDataView()
         }
     }
 }

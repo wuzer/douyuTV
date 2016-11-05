@@ -21,7 +21,7 @@ let KPrettyItemHeight: CGFloat     = KNormalItemWidth * 4 / 3
 let KCycleHeight: CGFloat          = KScreenWidth * 3 / 8
 let KGameHeight: CGFloat           = 90
 
-class BaseAnchorViewController: UIViewController {
+class BaseAnchorViewController: BaseViewController {
 
     var baseViewModel: BaseViewModel!
     
@@ -58,9 +58,13 @@ class BaseAnchorViewController: UIViewController {
 // MARK: set UI
 extension BaseAnchorViewController {
     
-    func setupUI() {
+    override func setupUI() {
+        
+        contentView = collectionView
         
         view.addSubview(collectionView)
+        
+        super.setupUI()
     }
     
 }

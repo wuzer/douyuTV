@@ -67,6 +67,8 @@ extension RecommendViewController {
             anchors.append(moreAnchor)
             
             self.gameView.anchorGroups = anchors
+            
+            self.showHaveDataView()
         }
         
         recommendViewModel.requestCycleData {

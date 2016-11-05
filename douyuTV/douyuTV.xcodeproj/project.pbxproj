@@ -31,6 +31,7 @@
 		8463C5CA1DCDA82E00CEEC4F /* AmuseMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5C91DCDA82E00CEEC4F /* AmuseMenuViewCell.swift */; };
 		8463C5CC1DCDB7F400CEEC4F /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5CB1DCDB7F400CEEC4F /* FunnyViewController.swift */; };
 		8463C5CE1DCDBD3400CEEC4F /* FunnyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5CD1DCDBD3400CEEC4F /* FunnyViewModel.swift */; };
+		8463C5D01DCDC24B00CEEC4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8463C5CF1DCDC24B00CEEC4F /* BaseViewController.swift */; };
 		846466651DBF43CA001CD1B9 /* SlideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466641DBF43C9001CD1B9 /* SlideModel.swift */; };
 		846466671DBF48C6001CD1B9 /* CycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846466661DBF48C6001CD1B9 /* CycleViewCell.swift */; };
 		8468C4B01DA6377F00895200 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468C4AF1DA6377F00895200 /* PageContentView.swift */; };
@@ -80,6 +81,7 @@
 		8463C5C91DCDA82E00CEEC4F /* AmuseMenuViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmuseMenuViewCell.swift; sourceTree = "<group>"; };
 		8463C5CB1DCDB7F400CEEC4F /* FunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		8463C5CD1DCDBD3400CEEC4F /* FunnyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewModel.swift; sourceTree = "<group>"; };
+		8463C5CF1DCDC24B00CEEC4F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		846466641DBF43C9001CD1B9 /* SlideModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideModel.swift; sourceTree = "<group>"; };
 		846466661DBF48C6001CD1B9 /* CycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewCell.swift; sourceTree = "<group>"; };
 		8468C4AF1DA6377F00895200 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				84B246641DCB1A1100391B8A /* BaseAnchorViewController.swift */,
+				8463C5CF1DCDC24B00CEEC4F /* BaseViewController.swift */,
 			);
 			name = Base;
 			path = TabbarViewController/Base;
@@ -480,6 +483,7 @@
 				843600C11DBB2FAC003D1303 /* NSDate+Extension.swift in Sources */,
 				84B285D91DBFA985007FDF1F /* GameViewController.swift in Sources */,
 				843600C31DBB3938003D1303 /* AnchorGroup.swift in Sources */,
+				8463C5D01DCDC24B00CEEC4F /* BaseViewController.swift in Sources */,
 				846466651DBF43CA001CD1B9 /* SlideModel.swift in Sources */,
 				8463C5CC1DCDB7F400CEEC4F /* FunnyViewController.swift in Sources */,
 				848CAC671DA2824B00A84C91 /* ViewController.swift in Sources */,
